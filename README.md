@@ -29,15 +29,15 @@ Please make sure to not miss any step along the process.
       ```python3 -m venv venv``` <br />
       Activate the environment <br />
       ```venv\Scripts\activate.bat``` <br />
-      Install the required packages
+      Install the required packages <br />
       ```pip install -r requirements.txt``` <br/><br/>
 
     - For Linux or macOS <br />
       ```python3 -m venv venv``` <br />
       Activate the environment <br />
       ```source venv/bin/activate``` <br />
-      Install the required packages
-      ```pip install -r requirements.txt```
+      Install the required packages <br />
+      ```pip install -r requirements.txt``` 
 
 #### Depending on your system, if you run into any issues while creating a virtual environment please refer to the official python docs on how you should create one [here](https://docs.python.org/3/library/venv.html).
 
