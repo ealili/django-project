@@ -1,0 +1,11 @@
+<form method="POST">
+
+    <a href="{% url 'notes' %}" style="display: flex; align-items: center; text-decoration: none; color: #45a049;">
+       < Go Back
+    </a>
+    {% csrf_token %}
+
+    <p>Are you sure you want to delete this note? `{{ note }}`</p>
+
+    <input type="submit" value="Delete">
+</form>

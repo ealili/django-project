@@ -1,0 +1,25 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+    <a href="{% url 'notes' %}" style="display: flex; align-items: center; text-decoration: none; color: #45a049;">
+        <i class="material-icons" style="font-size: 36px; color: #45a049; cursor: pointer; margin-right: 5px;">arrow_circle_left</i>
+        Go Back
+    </a>
+    <h2> Chat with GPT</h2>
+
+    <div class="chat-history">
+        {% for message in messages %}
+            {% if message.is_user_message %}
+                <div class="message">You: {{ message.content }}</div>
+            {% else %}
+                <div class="response">GPT: {{ message.content }}</div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <form method="POST" class="chat-input" style="display: flex; justify-content: center; align-items: center;">
+        {% csrf_token %}
+        {{ form.user_message }}
+        <input type="submit" value="Send" style="margin-left: 10px;"/>
+    </form>
+{% endblock content %}

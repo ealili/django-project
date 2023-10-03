@@ -1,0 +1,24 @@
+<style>
+    .logout-link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #333;
+    }
+
+    .logout-link i {
+        margin-right: 5px; /* Adjust the margin between the icon and text as needed */
+    }
+
+
+</style>
+
+{% if request.user.is_authenticated %}
+    <div class="user-section">
+        <p class="welcome-message">You are logged in as <b>{{ request.user }}.</b></p>
+        <a class="logout-link" href="{% url 'logout' %}">
+            <i class="material-icons" style="color: #45a049; cursor: pointer;">logout</i>Log out
+        </a>
+    </div>
+    <hr>
+{% endif %}

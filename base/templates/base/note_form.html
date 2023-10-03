@@ -1,0 +1,21 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+    <a href="{% url 'notes' %}" style="display: flex; align-items: center; text-decoration: none; color: #45a049;">
+        <i class="material-icons" style="font-size: 36px; color: #45a049; cursor: pointer; margin-right: 5px;">arrow_circle_left</i>
+        Go Back
+    </a>
+
+    <h3>Add new note</h3>
+
+
+    <form class="form-control" action="" method="POST">
+        {% csrf_token %}
+        <div style="display: flex">
+
+            {{ form.as_p }}
+            <input type="submit" value="Save">
+        </div>
+
+    </form>
+{% endblock %}

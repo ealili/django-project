@@ -1,0 +1,115 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>Notes</title>
+
+    <style>
+        html {
+            font-family: 'Verdana';
+                        background-color: #f4f4f4;
+
+        }
+            .user-section {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .welcome-message {
+        margin-right: 30px;
+    }
+
+    .login-link, .logout-link, .chat-link, .add-note-link, .update-link, .delete-link {
+        text-decoration: none;
+        color: #007bff;
+        margin-right: 20px;
+    }
+
+    .note-table {
+        width: 50%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    .note-table td {
+        border: 1px solid #ddd;
+        padding: 10px;
+    }
+
+    .note-list-heading {
+        color: #333;
+        font-size: 24px;
+    }
+
+.chat-history {
+margin-bottom: 2%;
+}
+
+.chat-input input[type="text"] {
+width: 40%;
+text-align: center;
+padding: 10px;
+}
+
+.chat-input input[type="submit"] {
+padding: 10px;
+color: white;
+background-color: #333;
+}
+    .message, .response {
+{#    margin-left: 10px;#}
+    }
+
+    .message {
+    padding: 10px;
+    background-color: #dedede;
+    }
+
+    .response {
+    padding: 10px;
+    background-color: #ebebeb;
+    }
+
+
+.form-control input[type="text"] {
+            padding: 10px;
+            margin: 10px;
+            width: 300px    ;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+}
+
+  .form-control input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin: 25px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+
+    </style>
+</head>
+<body>
+
+{% include 'base/header.html' %}
+
+<div class="container">
+    {% block content %}
+
+    {% endblock content %}
+</div>
+</body>
+</html>

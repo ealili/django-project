@@ -1,0 +1,37 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+    <div style="display: flex; padding: 10px">
+        <a href="{% url 'notes' %}"
+           style="display: flex; align-items: center; text-decoration: none; color: black">
+            <i class="material-icons"
+               style="font-size: 36px; color: black; cursor: pointer; margin-right: 5px;">format_list_bulleted</i>
+            <h2>Notes</h2>
+        </a>
+
+        <a href="{% url 'chat_view' %}"
+           style="display: flex; align-items: center; text-decoration: none;
+           color: #00A67E; padding-left: 30px">
+            <i class="material-icons"
+               style="font-size: 36px; color: #00A67E; cursor: pointer; margin-right: 5px;">chat</i>
+            <h2>ChatGPT</h2>
+        </a>
+    </div>
+
+    <a class="add-note-link" href="{% url 'note-create' %}">Add Note</a>
+
+    <table class="note-table">
+        {% for note in notes %}
+            <tr>
+                <td style="display: flex; align-items: center;"><i class="material-icons" style="margin: 5px">radio_button_unchecked</i>{{ note.title }}
+                </td>
+                <td><a class="update-link" href="{% url 'note-update' note.id %}">Update</a></td>
+                <td><a class="delete-link" href="{% url 'note-delete' note.id %}">Delete</a></td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td colspan="3">No notes found</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock content %}
